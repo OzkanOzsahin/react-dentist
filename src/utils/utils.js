@@ -10,7 +10,7 @@ const getRandomPerson = () => getRandomItem(names);
 
 const getRandomFirstName = () => getRandomPerson().name;
 
-const getRandomSurName = () => getRandomPerson().surname;
+//const getRandomSurName = () => getRandomPerson().surname;
 
 const getRandomId = () => getRandomInteger(1,1000000);
 
@@ -29,11 +29,11 @@ const getRandomTime = () => getRandomInteger(8, 19);
 
 const getRandomDay = () => getRandomInteger(1, 28);
 
-const getRandomSurName = () => getRandomPerson(1, 20)
+const getRandomSurName = () => getRandomPerson(1, 20).surname
 
 const generatePerson = () => ({
   name: getRandomFirstName(),
-  surname: getRandomSurname(),
+  surname: getRandomSurName(),
   phone: getRandomPhone(),
   id: getRandomId(),
 });
