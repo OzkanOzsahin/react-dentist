@@ -10,7 +10,7 @@ const getRandomPerson = () => getRandomItem(names);
 
 const getRandomFirstName = () => getRandomPerson().name;
 
-//const getRandomSurName = () => getRandomPerson().surname;
+
 
 const getRandomId = () => getRandomInteger(1,1000000);
 
@@ -36,6 +36,7 @@ const generatePerson = () => ({
   surname: getRandomSurName(),
   phone: getRandomPhone(),
   id: getRandomId(),
+  
 });
 
 const namesToEmailPart = ({ name, surname }) =>

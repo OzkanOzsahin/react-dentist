@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import Home from "../views/Home";
 import Calendar from "../views/Calendar";
 import Day from "../views/Day";
@@ -19,16 +19,19 @@ const App = () => (
         </ul>
   
         
-  
-        <Route path="/" component={Home} />
-        <Route path="/day" component={Day} />
-        <Route path="/calendar" component={Calendar} />
-
+  <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/day" element={<Day appointments={appointments} />} />
+        <Route path="/calendar" element={ <Calendar appointments={appointments} />} />
+   </Routes>
       </div>
+    
     </Router>
+  
   );
 
-export default App;
+
+  export default App;
 
 
 
