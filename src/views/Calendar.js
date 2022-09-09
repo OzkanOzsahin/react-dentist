@@ -1,31 +1,37 @@
 import React from "react";
 import "./Calendar.css";
-import DayInMonth from "./DayInMonth";
+import DayInMonth from './DayInmonth';
 
-const divideByDay = appointments => {
+  const divideByDay = appointments => {
   const appointmentsByDay = {};
   appointments.forEach(appointment => {
     const day = appointment.day;
     if (!appointmentsByDay.hasOwnProperty(day)) {
       appointmentsByDay[day] = [];
     }
-    appointmentsByDay[day].push(appointment);
+   appointmentsByDay[day].push(appointment);
   });
   return appointmentsByDay;
 };
 
 
-  const appointmentsByDay = divideByDay(Calendar);
-
-  const daysInMonthJSX = Object.values(
-    appointmentsByDay
-  ).map((appointmentsInDay, index) => (
+  //const appointmentsByDay = divideByDay(appointments);
+  // const daysInMonthJSX = Object.values(
+  //   appointmentsByDay
+  // ).map((appointmentsInDay, index) => (
+  //   <DayInMonth appointments={appointmentsInDay} key={index} />
+  // ));
+  
+  
+  
+    function Calendar({ appointments }) {
+      const appointmentsByDay = divideByDay(appointments);
+      const daysInMonthJSX = Object.values(
+      appointmentsByDay
+     ).map((appointmentsInDay, index) => (
     <DayInMonth appointments={appointmentsInDay} key={index} />
   ));
-   
   
-  
-    function Calendar() {
       return(
    <div className="calendarview">
      <div className="header">

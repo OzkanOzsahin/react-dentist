@@ -2,10 +2,10 @@ import React from "react";
 import "./App.css"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "../views/Home";
-//import Calendar from "../views/Calendar";
+import Calendar from "../views/Calendar";
 import Day from "../views/Day";
 import { getInitialState } from "../utils/utils";
-import Calendar from "../views/Calendar";
+
 
 const { appointments }  = getInitialState();
 
@@ -18,11 +18,12 @@ const App = () => (
           <li><Link to="/calendar">Calendar</Link></li>
         </ul>
   
-        <hr />
+        
   
-        <Route exact path="/" component={Home} />
+        <Route path="/" component={Home} />
         <Route path="/day" component={Day} />
         <Route path="/calendar" component={Calendar} />
+
       </div>
     </Router>
   );
